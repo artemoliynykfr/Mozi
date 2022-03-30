@@ -13,8 +13,13 @@ testWebP(function (support) {
 		document.querySelector('body').classList.add('no-webp');
 	}
 });
+
+const tl = new TimelineMax()
+new SmoothScroll('a[href*="#"]')
+
+
 // header burger	
-function burgerMenu(){
+/* function burgerMenu(){
 	const burger = document.querySelector('.burger')
 	const menu = document.querySelector('.menu')
 	const body = document.querySelector('body')
@@ -47,7 +52,7 @@ function fixedNav(){
 		nav.classList.remove('fixed__nav')
 	}
 }
-window.addEventListener('scroll', fixedNav)
+window.addEventListener('scroll', fixedNav) */
 //swiper
 /* if (document.querySelector('.body__main')){
 	
