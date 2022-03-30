@@ -13,8 +13,20 @@ testWebP(function (support) {
 		document.querySelector('body').classList.add('no-webp');
 	}
 });
+function burger(){
+	let header__burger = document.querySelector('.navbar-toggler'),
+		 header__menu = document.querySelector('.nav'),
+		 header = document.querySelector('.navbar');
+	header__burger.addEventListener('click', function(){
+		if (header__burger.classList.contains('active'), header__menu.classList.contains('active'), header.classList.contains('active')){
+			header__burger.classList.remove('active') || header__menu.classList.remove('active') || header.classList.remove('active')
+		} else {
+			header__burger.classList.add('active') || header__menu.classList.add('active') || header.classList.add('active')
+		}
+	})
+}
+burger();
 if(document.querySelector('.body__main')){
-
 	new Swiper('.swiper-container', {
 			direction: 'horizontal',
 			loop: !1,
@@ -50,4 +62,3 @@ if(document.querySelector('.body__main')){
 			}
 		});
 }
-new SmoothScroll('a[href*="#"]')

@@ -24,55 +24,6 @@ header .navbar-toggler {
   border: none;
 }
 
-header .navbar-toggler.collapsed .navbar-toggler-icon {
-  position: relative;
-  height: 20px;
-  width: 30px;
-  background: none !important;
-}
-
-header .navbar-toggler.collapsed .navbar-toggler-icon::before,
-header .navbar-toggler.collapsed .navbar-toggler-icon::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  right: 0;
-  background-color: #BF0830;
-  -webkit-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-  -o-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-}
-
-header .navbar-toggler.collapsed .navbar-toggler-icon::before {
-  top: 0;
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-
-header .navbar-toggler.collapsed .navbar-toggler-icon::after {
-  bottom: 0;
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-
-header .navbar-toggler.collapsed .navbar-toggler-icon span {
-  position: absolute;
-  top: 9px;
-  right: 0;
-  width: 100%;
-  background-color: #BF0830;
-  height: 2px;
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-  -o-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-}
-
 header .navbar-toggler .navbar-toggler-icon {
   position: relative;
   height: 20px;
@@ -88,9 +39,58 @@ header .navbar-toggler .navbar-toggler-icon::after {
   width: 100%;
   right: 0;
   background-color: #BF0830;
+  -webkit-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+  -o-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
 }
 
 header .navbar-toggler .navbar-toggler-icon::before {
+  top: 0;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+header .navbar-toggler .navbar-toggler-icon::after {
+  bottom: 0;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+header .navbar-toggler .navbar-toggler-icon span {
+  position: absolute;
+  top: 9px;
+  right: 0;
+  width: 100%;
+  background-color: #BF0830;
+  height: 2px;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+  -o-transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+}
+
+header .navbar-toggler.active .navbar-toggler-icon {
+  position: relative;
+  height: 20px;
+  width: 30px;
+  background: none !important;
+}
+
+header .navbar-toggler.active .navbar-toggler-icon::before,
+header .navbar-toggler.active .navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  right: 0;
+  background-color: #BF0830;
+}
+
+header .navbar-toggler.active .navbar-toggler-icon::before {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -100,7 +100,7 @@ header .navbar-toggler .navbar-toggler-icon::before {
   top: 8px;
 }
 
-header .navbar-toggler .navbar-toggler-icon::after {
+header .navbar-toggler.active .navbar-toggler-icon::after {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -110,7 +110,7 @@ header .navbar-toggler .navbar-toggler-icon::after {
   bottom: 10px;
 }
 
-header .navbar-toggler .navbar-toggler-icon span {
+header .navbar-toggler.active .navbar-toggler-icon span {
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);
@@ -616,6 +616,10 @@ header .navbar {
   padding: 35px 60px;
 }
 
+.jobs__item .section__btn-outline {
+  white-space: nowrap;
+}
+
 .jobs__title {
   font-style: normal;
   font-weight: 400;
@@ -852,7 +856,7 @@ a {
 
 @media (max-width: 1399.98px) {
   .section__hero {
-    padding: 100px 0;
+    padding: 100px 0 !important;
   }
 
   .section__hero.section__hero-products .hero__img {
@@ -924,6 +928,49 @@ a {
     font-size: 16px;
     margin-right: 0px;
     margin-bottom: 20px;
+  }
+
+  header .navbar.active {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    background-color: #fff;
+  }
+
+  header .navbar.active .container {
+    position: relative;
+    height: 100%;
+  }
+
+  header .navbar.active .navbar-brand {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  header .navbar.active .navbar-toggler {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  header .nav {
+    display: none;
+  }
+
+  header .nav.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .section__hero {
+    padding: 20px 0 !important;
   }
 
   .section__hero.section__hero-products .hero__item {
